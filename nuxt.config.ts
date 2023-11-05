@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   modules: ["@hebilicious/authjs-nuxt"],
   authJs: {
-    guestRedirectTo: "/redirected"
+    authenticatedRedirectTo: '/dashboard',
+    baseUrl: process.env.NUXT_APP_BASE_URL,
+    guestRedirectTo: '/login',
+    verifyClientOnEveryRequest: true,
   },
   nitro: {
     routeRules: {
